@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { FaHome, FaCut, FaInfoCircle, FaPhone, FaBars, FaTimes, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 
 const navItems = [
@@ -69,11 +70,17 @@ export default function Navigation() {
                 e.preventDefault()
                 scrollToSection('#inicio')
               }}
-              className="font-serif text-2xl md:text-3xl font-bold"
+              className="relative"
               whileHover={{ scale: 1.05 }}
             >
-              <span className="text-white">Sandra</span>{' '}
-              <span className="gradient-text-gold">Delgado</span>
+              <Image
+                src="/images/logo.png"
+                alt="Sandra Delgado Logo"
+                width={180}
+                height={60}
+                className="h-12 md:h-14 w-auto"
+                priority
+              />
             </motion.a>
 
             {/* Desktop Menu */}
